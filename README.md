@@ -1,28 +1,23 @@
-This is a simple Rock, Paper, Scissors game implemented in JavaScript. The game is played entirely in the browser's console, where the user is prompted to make a choice and the computer randomly selects a choice as well. The game then evaluates the outcome and lets you know if you won, lost, or tied.
+# Rock Paper Scissors ✊✋✌️
 
-How to Play:
-The game will prompt you to choose either Rock, Paper, or Scissors.
+This is a simple Rock, Paper, Scissors game implemented in JavaScript. Originally designed to run in the browser console, it now features a user-friendly interface you can play directly in the browser — no developer tools required!
 
-The computer will randomly make its selection.
+## 🕹️ How to Play
 
-Afterward, the game will tell you if you win, lose, or if it’s a tie.
+1. Open the game in your browser.
+2. Click on Rock, Paper, or Scissors to make your move.
+3. The computer will instantly make its move and reveal the result:
+   - 🎉 You win!
+   - 😢 You lose!
+   - 🤝 It's a tie!
+4. Play as many rounds as you want — just click again!
 
-Refresh the page to play again.
+## 🚀 How to Run Locally
 
-How to Run:
-Clone the repository to your local machine.
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/jsnborn/rock-paper-scissors-odin.git
 
-Open index.html in your browser.
+2. Open the folder in your code editor or file explorer.
 
-Open your browser’s Developer Tools (press F12 or Ctrl + Shift + I) and go to the Console tab.
-
-The game will prompt you to enter your choice (Rock, Paper, or Scissors).
-
-Check the console for the result!
-
-Refresh the page to play again.
-
-Technologies Used:
-HTML
-
-JavaScript (for game logic and user interaction)
+3. Double-click index.html (or right-click and choose Open with > Browser) to launch the game.
