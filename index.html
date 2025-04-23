@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rock Paper Scissors</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="game-container">
-    <h1>Rock Paper Scissors</h1>
-    <div class="buttons">
-      <button data-choice="rock">🪨 Rock</button>
-      <button data-choice="paper">📄 Paper</button>
-      <button data-choice="scissors">✂️ Scissors</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>Rock Paper Scissors</h1>
+      <div class="buttons">
+        <button data-choice="rock">🪨 Rock</button>
+        <button data-choice="paper">📄 Paper</button>
+        <button data-choice="scissors">✂️ Scissors</button>
+      </div>
+      <div class="results">
+        <p id="round-result">Choose your move!</p>
+        <p id="score">Player: 0 | Computer: 0</p>
+        <p id="winner"></p>
+        <!-- Countdown display for the 3-second countdown -->
+        <p id="countdown"></p>
+      </div>
+      <button id="reset" class="hidden">🔁 Play Again</button>
     </div>
-    <div class="results">
-      <p id="round-result">Choose your move!</p>
-      <p id="score">Player: 0 | Computer: 0</p>
-      <p id="winner"></p>
-    </div>
-    <button id="reset" class="hidden">🔁 Play Again</button>
-  </div>
-  <script src="script.js"></script>
-</body>
+
+    <!-- Audio files for win/lose/tie sound effects -->
+    <audio id="win-sound" src="win-sound.mp3"></audio>
+    <audio id="lose-sound" src="lose-sound.mp3"></audio>
+    <audio id="tie-sound" src="tie-sound.mp3"></audio>
+
+    <script src="script.js"></script>
+  </body>
 </html>

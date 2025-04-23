@@ -7,6 +7,11 @@ const resetButton = document.getElementById('reset');
 let playerScore = 0;
 let computerScore = 0;
 
+// Load sound effects (using .wav files now)
+const winSound = new Audio('sounds/win-sound.wav');
+const loseSound = new Audio('sounds/lose-sound.wav');
+const tieSound = new Audio('sounds/tie-sound.wav');
+
 function getComputerChoice() {
   const choices = ['rock', 'paper', 'scissors'];
   return choices[Math.floor(Math.random() * choices.length)];
@@ -43,15 +48,50 @@ function checkWinner() {
   }
 }
 
+function startCountdown() {
+  let countdown = 3;
+  resultText.textContent = `Starting in ${countdown}...`;
+  
+  const countdownInterval = setInterval(() => {
+    countdown--;
+    resultText.textContent = `Starting in ${countdown}...`;
+    if (countdown === 0) {
+      clearInterval(countdownInterval);
+      resultText.textContent = "Go!";
+      setTimeout(() => {
+        buttons.forEach(button => {
+          button.disabled = false;
+        });
+      }, 500);
+    }
+  }, 1000);
+}
+
 buttons.forEach(button => {
   button.addEventListener('click', () => {
     const playerChoice = button.getAttribute('data-choice');
-    const computerChoice = getComputerChoice();
-    const result = playRound(playerChoice, computerChoice);
-    updateScore(result);
-    resultText.textContent = `You chose ${playerChoice}. Computer chose ${computerChoice}. ${result}`;
-    scoreText.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
-    checkWinner();
+    buttons.forEach(button => button.disabled = true); // Disable buttons while the game is in progress
+
+    // Countdown before round starts
+    startCountdown();
+
+    // Wait for the countdown to finish, then run the game logic
+    setTimeout(() => {
+      const computerChoice = getComputerChoice();
+      const result = playRound(playerChoice, computerChoice);
+      updateScore(result);
+      resultText.textContent = `You chose ${playerChoice}. Computer chose ${computerChoice}. ${result}`;
+      scoreText.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
+      checkWinner();
+
+      // Play the corresponding sound after a delay
+      setTimeout(() => {
+        if (result.includes('You win')) winSound.play();
+        else if (result.includes('Computer wins')) loseSound.play();
+        else tieSound.play();
+      }, 500); // Play sound after a slight delay to let result show first
+
+    }, 3000); // Wait 3 seconds before showing the result
   });
 });
 
