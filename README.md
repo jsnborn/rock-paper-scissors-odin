@@ -1,4 +1,3 @@
-rock-paper-scissors-odin
 This is a simple Rock, Paper, Scissors game implemented in JavaScript. The game is played entirely in the browser's console, where the user is prompted to make a choice and the computer randomly selects a choice as well. The game then evaluates the outcome and lets you know if you won, lost, or tied.
 
 How to Play:
