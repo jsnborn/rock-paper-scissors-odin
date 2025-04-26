@@ -21,3 +21,10 @@ This is a simple Rock, Paper, Scissors game implemented in JavaScript. Originall
 2. Open the folder in your code editor or file explorer.
 
 3. Double-click index.html (or right-click and choose Open with > Browser) to launch the game.
+
+
+Credits to sounds on freesound.org:
+
+S: horn_fail_wahwah_2.wav by TaranP | License: Creative Commons 0
+S: Fail Sound Effect - Accoustic Guitar by florianreichelt | License: Creative Commons 0
+S: Electro win sound by Unlistenable | License: Attribution NonCommercial 4.0
